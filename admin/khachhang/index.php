@@ -57,7 +57,7 @@ header('location:../../index.php');
 
 	  <?php
 
-      $qry="SELECT k.user_id, k.Hoten, k.Sdt, k.Diachi, k.Kehoach,k.Taikhoan, k.Gioitinh, d.Tendv, k.Ngaybd, k.Ngaykt, k.Tongtien, k.Trangthai, DATEDIFF(k.Ngaykt, CURDATE()), IF(DATEDIFF(k.Ngaykt, CURDATE()) <= 0,'hết hạn','hoạt động') AS ngày FROM khachhang k JOIN Dichvu d on k.id = d.id";
+      $qry="SELECT k.user_id, k.Hoten, k.Sdt, k.Diachi, k.Kehoach,k.Taikhoan, k.Gioitinh, d.Tendv, k.Ngaybd, k.Ngaykt, k.Tongtien, k.Trangthai, DATEDIFF(k.Ngaykt, CURDATE()), IF(DATEDIFF(k.Ngaykt, CURDATE()) <= 0,'Đã hết hạn','Đang Hoạt động') AS ngày FROM khachhang k JOIN Dichvu d on k.id = d.id";
       $cnt = 1;
         $result=mysqli_query($con,$qry);
 
@@ -76,8 +76,8 @@ header('location:../../index.php');
                   <th>Thời gian</th>
                   <th>Thời gian còn lại</th>
                   <th>Trạng thái</th>
-                  <th></th>
-                  <th></th>
+                  <th>#</th>
+                  <th>#</th>
                 </tr>
               </thead>";
               

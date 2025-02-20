@@ -155,9 +155,9 @@ $result5=mysqli_query($con,$qry);
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
         <li class="bg_ls span"> <a href="index.php" style="font-size: 16px;"> <i class="fas fa-user-check"></i> <span class="label label-important"><?php include'../khachhang/slkhachhang.php'?></span>Khách hàng đã đăng ký</a> </li>
-        <li class="bg_lo span3"> <a href="../khachhang/index.php" style="font-size: 16px;"> <i class="fas fa-users"></i></i><span class="label label-important"><?php include'../khachhang/khachhanghoatdong.php'?></span>khách hàng đang hoạt động</a> </li>
+        <li class="bg_lo span3"> <a href="../khachhang/index.php" style="font-size: 16px;"> <i class="fas fa-users"></i></i><span class="label label-important"><?php include'../khachhang/khachhanghoatdong.php'?></span>Khách hàng đang hoạt động</a> </li>
         <li class="bg_lg span3"> <a href="../hoadon/index.php" style="font-size: 16px;"> <i class="fa fa-dollar-sign"></i> Doanh thu: <?php include'../khachhang/tongtienchitra.php' ?> đ</a> </li>
-        <li class="bg_lb span2"> <a href="../thongbao/index.php" style="font-size: 16px;"> <i class="fas fa-bullhorn"></i><span class="label label-important"><?php include'../thongbao/sl-thongbao.php'?></span>Announcements </a> </li>
+        <li class="bg_lb span2"> <a href="../thongbao/index.php" style="font-size: 16px;"> <i class="fas fa-bullhorn"></i><span class="label label-important"><?php include'../thongbao/sl-thongbao.php'?></span>Thông báo </a> </li>
       </ul>
     </div>
     
