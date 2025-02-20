@@ -1,0 +1,22 @@
+<?php
+session_start();
+require_once ('../../csdl/helper.php');
+if(($_SESSION['congviec']) != "Quản lý" AND $_SESSION['congviec'] != "Thu ngân"){
+header('location:../index.php');	
+}
+
+if(isset($_GET['id'])){
+$id=$_GET['id'];
+
+$qry="UPDATE khachhang SET Loinhac = '2' where user_id=$id";
+$result=mysqli_query($con,$qry);
+
+if($result){
+    echo '<script>alert("Lời nhắc đã được chuyển đến khách hàng!")</script>';
+    echo '<script>window.location.href = "index.php";</script>';
+    
+}else{
+    echo"ERROR!!";
+}
+}
+?>
