@@ -109,7 +109,7 @@ header('location:../index.php');
                   <label class="control-label">Công việc</label>
                   <div class="controls">
                   <select class="form-control" name="congviec" id="congviec">
-                    <option value="">chọn</option>
+                    <option value="">Chọn</option>
                     <?php
                         $sql = 'select * from congviec';
                         $list = executeResult($sql);

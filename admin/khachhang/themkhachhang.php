@@ -157,7 +157,7 @@ if(isset($_POST['Hoten'])){
                 <span class="help-block"></span> </div>
             </div>
             <div class="control-group">
-              <label class="control-label">chiều cao :</label>
+              <label class="control-label">Chiều cao :</label>
               <div class="controls">
                 <input type="text" name="Chieucaobd" placeholder="Nhập chỉ số chiều cao hiện tại" class="span11" />
                 <span class="help-block"></span> </div>
@@ -244,7 +244,7 @@ if(isset($_POST['Hoten'])){
               <label for="normal" class="control-label">Chon dịch vụ: </label>
               <div class="controls">
                 <select class="form-control" name="Dichvu" id="Dichvu">
-                    <option value="">chọn</option>
+                    <option value="">Chọn</option>
                     <?php
                         $sql = 'select * from dichvu';
                         $list = executeResult($sql);
