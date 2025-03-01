@@ -44,7 +44,7 @@ header('location:../index.php');
 
       <div class='widget-box'>
           <div class='widget-title'> <span class='icon'> <i class='fas fa-th'></i> </span>
-            <h5>bảng khách hàng thanh toán</h5>
+            <h5>Bảng khách hàng thanh toán</h5>
             <form id="custom-search-form" role="search" method="POST" action="timkiem.php" class="form-search form-horizontal pull-right">
                 <div class="input-append span12">
                     <input type="text" class="search-query" placeholder="Search" name="search" required>
@@ -70,7 +70,7 @@ header('location:../index.php');
                   <th>Tên Huấn luyện viên</th>
                   <th>Thời gian đăng ký</th>
                   <th>Địa chỉ</th>
-                  <th>#</th>
+                  <th>Tình trạng</th>
                   <th>#</th>
                 </tr>
               </thead>";

@@ -44,7 +44,7 @@ header('location:../../index.php');
 
       <div class='widget-box'>
           <div class='widget-title'> <span class='icon'> <i class='fas fa-th'></i> </span>
-            <h5>bảng điểm danh</h5>
+            <h5>Bảng điểm danh</h5>
           </div>
           <div class='widget-content nopadding'>  
           <table class='table table-bordered table-hover'>
@@ -54,7 +54,7 @@ header('location:../../index.php');
                     <th>Họ và tên</th>
                     <th>Số điện thoại</th>
                     <th>Dịch vụ đang sử dụng</th>
-                    <th>thời gian</th>
+                    <th>Thời gian</th>
                     <th>Điểm danh lúc nào?</th>
                 </tr>
               </thead>

@@ -30,4 +30,4 @@ window.location="diemdanh/index.php";
 }
 
 
-  -->
+  ?>

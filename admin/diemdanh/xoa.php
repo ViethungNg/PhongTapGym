@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require_once ('../../csdl/helper.php');
 session_start();
 
@@ -29,6 +29,4 @@ window.location="diemdanh/index.php";
 </script>
 <?php
 }
-
-
-  -->
+?>

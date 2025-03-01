@@ -127,7 +127,7 @@ $ghichu = $row['ghichu'];
                 <h1>Hóa đơn</h1>
                 <p>Ngày thanh toán: <?php echo $ngaythanhtoan; ?></p>
             </div>
-            <img src="../../style/img/demo/anime.jpg" style ="witdh:100px; height:100px" alt="Logo">
+            <img src="../../style/img/demo/gymhome.png" style ="witdh:100px; height:100px" alt="Logo">
         </div>
         <div class="customer-info">
             <div>
