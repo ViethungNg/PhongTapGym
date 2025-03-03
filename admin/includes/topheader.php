@@ -4,6 +4,6 @@
     </li>
     
     <li class=""><a title="" href="../../logout.php"><i class="fas fa-power-off"></i> <span class="text">Logout</span></a></li>
-    <li class=""><a title="" href="#"><i class="fas fa-power-off"></i> <span class="text">Logout</span></a></li>
+    <li class=""><a title="" href="../doimatkhau/change_password.php"><i class="fas fa-power-off"></i> <span class="text">Đổi mật khẩu</span></a></li>
   </ul>
 </div>
