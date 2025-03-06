@@ -1,17 +1,17 @@
 <?php session_start();
-require_once ('../csdl/helper.php');?>
+require_once ('../csdl/helper.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
         <title>Quản lý Admin</title><meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../style/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="../style/css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="../style/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../style/css/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="../style/css/matrix-style.css" />
         <link rel="stylesheet" href="../style/css/matrix-login.css" />
         <link href="../font-awesome/css/fontawesome.css" rel="stylesheet" />
         <link href="../font-awesome/css/all.css" rel="stylesheet" />
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
     </head>
     
@@ -44,15 +44,15 @@ require_once ('../csdl/helper.php');?>
                         $username = mysqli_real_escape_string($con, $_POST['user']);
                         $password = mysqli_real_escape_string($con, $_POST['pass']);
                         
-                        $query 		= mysqli_query($con, "SELECT * FROM nhanvien n join congviec c on n.congviec = c.idCv WHERE password='$password' and username='$username'");
-                        $row		= mysqli_fetch_array($query);
-                        $num_row 	= mysqli_num_rows($query);
+                        $query = mysqli_query($con, "SELECT * FROM nhanvien n join congviec c on n.congviec = c.idCv WHERE password='$password' and username='$username'");
+                        $row = mysqli_fetch_array($query);
+                        $num_row = mysqli_num_rows($query);
                         
                         if ($num_row > 0) 
                             {			
-                                $_SESSION['congviec']=$row['TenCV'];
+                                $_SESSION['username'] = $row['username']; // Lưu username vào session
+                                $_SESSION['congviec'] = $row['TenCV'];
                                 header('location:khachhang/index.php');
-                                
                             }
                         else
                             {
@@ -66,7 +66,7 @@ require_once ('../csdl/helper.php');?>
                     }
             ?>
             <div class="pull-left">
-            <a href="khachhang/index.php"><h6>Khách hàng đăng nhập</h6></a>
+            <a href="../khachhang/index.php"><h6>Khách hàng đăng nhập</h6></a>
             </div>
 
             <div class="pull-right">
@@ -76,8 +76,8 @@ require_once ('../csdl/helper.php');?>
         </div>
         
         <script src="../style/js/jquery.min.js"></script>  
-        <scri../pt src="../style/js/matrix.login.js"></script> 
-        <scri../pt src="../style/js/bootstrap.min.js"></script> 
+        <script src="../style/js/matrix.login.js"></script> 
+        <script src="../style/js/bootstrap.min.js"></script> 
         <script src="../style/js/matrix.js"></script>
     </body>
 </html>

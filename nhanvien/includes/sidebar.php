@@ -10,44 +10,44 @@
       </ul>
     </li>
 
-    <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý thiết bị</span> <span class="label label-important"><?php include '../thietbi/slthietbi.php';?> </span></a>
+    <!-- <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý thiết bị</span> <span class="label label-important"><?php include '../thietbi/slthietbi.php';?> </span></a>
     <ul>
         <li class="<?php if($page=='thietbi'){ echo 'active'; }?>"><a href="../thietbi/index.php"><i class="fas fa-arrow-right"></i>Danh sách thiết bị</a></li>
         <li class="<?php if($page=='themthietbi'){ echo 'active'; }?>"><a href="../thietbi/them.php"><i class="fas fa-arrow-right"></i>Thêm thiết bị</a></li>
       </ul>
-    </li>
+    </li> -->
 
-    <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý dịch vụ</span> <span class="label label-important"><?php include '../dichvu/sldichvu.php';?> </span></a>
+    <!-- <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý dịch vụ</span> <span class="label label-important"><?php include '../dichvu/sldichvu.php';?> </span></a>
     <ul>
         <li class="<?php if($page=='dichvu'){ echo 'active'; }?>"><a href="../dichvu/index.php"><i class="fas fa-arrow-right"></i>Danh sách dịch vụ</a></li>
         <li class="<?php if($page=='themdichvu'){ echo 'active'; }?>"><a href="../dichvu/them.php"><i class="fas fa-arrow-right"></i>Thêm dịch vụ</a></li>
       </ul>
-    </li>
+    </li> -->
 
-    <li class="<?php if($page=='diemdanh'){ echo 'submenu active'; } else { echo 'submenu';}?>"> <a href="#"><i class="fas fa-calendar-alt"></i> <span>Quản lý điểm danh</span></a>
+    <!-- <li class="<?php if($page=='diemdanh'){ echo 'submenu active'; } else { echo 'submenu';}?>"> <a href="#"><i class="fas fa-calendar-alt"></i> <span>Quản lý điểm danh</span></a>
       <ul>
         <li class="<?php if($page=='diemdanh'){ echo 'active'; }?>"><a href="../diemdanh/index.php"><i class="fas fa-arrow-right"></i>Danh sách điểm danh</a></li>
                 <li class="<?php if($page=='diemdanhngay'){ echo 'active'; }?>"><a href="../diemdanh/diemdanhngay.php"><i class="fas fa-arrow-right"></i>Danh sách điểm danh hôm nay</a></li>
           <li class="<?php if($page=='xemdiemdanh'){ echo 'active'; }?>"><a href="../diemdanh/xem.php"><i class="fas fa-arrow-right"></i> Thống kê điểm danh</a></li>
         </ul>
-    </li>
-    <li class="submenu"> <a href="#"><i class="fas fa-hand-holding-usd"></i> <span>Quản lý hóa đơn</span> <span class="label label-important"><?php include '../hoadon/sl-hoadon.php';?> </span></a>
+    </li> -->
+    <!-- <li class="submenu"> <a href="#"><i class="fas fa-hand-holding-usd"></i> <span>Quản lý hóa đơn</span> <span class="label label-important"><?php include '../hoadon/sl-hoadon.php';?> </span></a>
       <ul>
         <li class="<?php if($page=='hoadon'){ echo 'active'; }?>"><a href="../hoadon/index.php"><i class="fas fa-arrow-right"></i>Danh sách hóa đơn</a></li>
           <li class="<?php if($page=='xemhoadon'){ echo 'active'; }?>"><a href="../hoadon/xem.php"><i class="fas fa-arrow-right"></i>Xem khách hàng đã thanh toán</a></li>
         </ul>
-    </li>
+    </li> -->
     <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý thông báo</span> <span class="label label-important"><?php include '../thongbao/sl-thongbao.php';?> </span></a>
       <ul>
         <li class="<?php if($page=='thongbao'){ echo 'active'; }?>"><a href="../thongbao/index.php"><i class="fas fa-arrow-right"></i>Danh sách thông báo</a></li>
           <li class="<?php if($page=='themthongbao'){ echo 'active'; }?>"><a href="../thongbao/them.php"><i class="fas fa-arrow-right"></i>Thêm thông báo mới</a></li>
         </ul>
     </li>
-        <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý nhân viên</span> <span class="label label-important"><?php include '../nhanvien/slnhanvien.php';?> </span></a>
+        <!-- <li class="submenu"> <a href="#"><i class="fas fa-dumbbell"></i> <span>Quản lý nhân viên</span> <span class="label label-important"><?php include '../nhanvien/slnhanvien.php';?> </span></a>
       <ul>
         <li class="<?php if($page=='nhanvien'){ echo 'active'; }?>"><a href="../nhanvien/index.php"><i class="fas fa-arrow-right"></i>Danh sách nhân viên</a></li>
           <li class="<?php if($page=='themnhanvien'){ echo 'active'; }?>"><a href="../nhanvien/them.php"><i class="fas fa-arrow-right"></i>Thêm nhân viên mới</a></li>
         </ul>
-    </li>
+    </li> -->
   </ul>
 </div>

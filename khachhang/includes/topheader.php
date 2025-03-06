@@ -2,5 +2,6 @@
   <ul class="nav right">
     <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"> <span class="text">Xin chào</span><b class="caret"></b></a>    
     <li class=""><a title="" href="../logout.php"> <span class="text">Đăng xuất</span></a></li>
+    <li class=""><a title="" href="../doimatkhau/change_password.php"> <span class="text">Đổi mật khẩu</span></a></li>
   </ul>
 </div>

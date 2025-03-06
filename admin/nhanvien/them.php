@@ -2,26 +2,26 @@
 session_start();
 require_once ('../../csdl/helper.php');
 if(!isset($_SESSION['user_id'])){
-header('location:../index.php');	
+header('location:../index.php');    
 }
- if(isset($_POST['Hoten'])){
-            $Hoten = $_POST["Hoten"];    
-            $username = $_POST["username"];
-            $password = $_POST["password"];
-            $email = $_POST["email"];
-            $Diachi = $_POST["Diachi"];
-            $congviec = $_POST["congviec"];
-            $Gioitinh = $_POST["Gioitinh"];
-            $Sodienthoai = $_POST["Sodienthoai"];
-            $id_Ca = $_POST['id_ca'];
-            $Giathue = $_POST['gia_thue'];
-            // echo $luong;     
-            $qry = "insert into nhanvien(Hoten,username,password,email,Diachi,congviec,id_ca,Gioitinh,Sodienthoai,Giathue) values ('$Hoten','$username','$password','$email','$Diachi','$congviec','$id_Ca','$Gioitinh','$Sodienthoai','$Giathue')";
-            $result = mysqli_query($con,$qry);
-            // echo $qry;
-            header('Location:index.php');
-		    die();
- }
+if(isset($_POST['Hoten'])){
+    $Hoten = $_POST["Hoten"];    
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $Diachi = $_POST["Diachi"];
+    $congviec = $_POST["congviec"];
+    $Gioitinh = $_POST["Gioitinh"];
+    $Sodienthoai = $_POST["Sodienthoai"];
+    $id_Ca = $_POST['id_ca'];
+    $Giathue = $_POST['gia_thue'];
+    // echo $luong;     
+    $qry = "insert into nhanvien(Hoten,username,password,email,Diachi,congviec,id_ca,Gioitinh,Sodienthoai,Giathue) values ('$Hoten','$username','$password','$email','$Diachi','$congviec','$id_Ca','$Gioitinh','$Sodienthoai','$Giathue')";
+    $result = mysqli_query($con,$qry);
+    // echo $qry;
+    header('Location:index.php');
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +170,7 @@ header('location:../index.php');
                 </div>
 
                 <div class="control-group">
-                  <label class="control-label">Số diện thoại</label>
+                  <label class="control-label">Số điện thoại</label>
                   <div class="controls">
                     <input id="Sodienthoai" type="number" name="Sodienthoai" />
                   </div>
@@ -198,5 +198,34 @@ header('location:../index.php');
 <script src="../../style/js/jquery.wizard.js"></script> 
 <script src="../../style/js/matrix.js"></script> 
 <script src="../../style/js/matrix.wizard.js"></script>
+<script>
+  const idCaSelect = document.getElementById('id_ca');
+  const caLamViecInfo = document.createElement('div');
+  caLamViecInfo.style.marginTop = '10px';
+  caLamViecInfo.style.fontWeight = 'bold';
+  document.querySelector('.form-actions').insertAdjacentElement('beforebegin', caLamViecInfo);
+
+  idCaSelect.addEventListener('change', function() {
+    let info = '';
+    switch (this.value) {
+      case '1':
+        info = 'Ca sáng - 6h - 12h';
+        break;
+      case '2':
+        info = 'Ca chiều - 12h - 18h';
+        break;
+      case '3':
+        info = 'Ca tối - 18h - 22h';
+        break;
+      case '4':
+        info = 'Cả ngày - 8h - 17h';
+        break;
+      default:
+        info = '';
+        break;
+    }
+    caLamViecInfo.textContent = info;
+  });
+</script>
 </body>
 </html>

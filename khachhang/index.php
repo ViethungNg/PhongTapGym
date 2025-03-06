@@ -70,7 +70,7 @@ require_once ('../csdl/helper.php');?>
             </div>
 
             <div class="pull-right">
-            <a href="../nhanvien/index.php"><h6>Nhân viên đăng nhập</h6></a>
+            <a href="../nhanvien/index.php"><h6>Nhân viên quản lý đăng nhập</h6></a>
             </div>
             
         </div>

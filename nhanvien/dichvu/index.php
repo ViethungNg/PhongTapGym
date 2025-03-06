@@ -64,8 +64,8 @@ if(($_SESSION['congviec']) != "Quản lý"){
                   <th>#</th>
                   <th>Tên dịch vụ</th>
                   <th>Giá tiền</th>
-                  <th>#</th>
-                  <th>#</th>
+                  <!--<th>#</th>-->
+                  <!--<th>#</th>-->
                 </tr>
               </thead>";
               
@@ -76,8 +76,8 @@ if(($_SESSION['congviec']) != "Quản lý"){
                 <td><div class='text-center'>".$cnt."</div></td>
                 <td><div class='text-center'>".$row['Tendv']."</div></td>
                 <td><div class='text-center'>".$row['Gia']."</div></td>
-                <td><div class='text-center'><a href='xoa.php?id=".$row['id']."' style='color:#F66;'><i class='fas fa-trash'></i>Xóa</a></div></td>
-                <td><div class='text-center'><a href='sua.php?id=".$row['id']."' style='color:#FFD700'><i class='fas fa-edit'></i>Sửa</a></div></td>
+                <!--<td><div class='text-center'><a href='xoa.php?id=".$row['id']."' style='color:#F66;'><i class='fas fa-trash'></i>Xóa</a></div></td> -->
+               <!-- <td><div class='text-center'><a href='sua.php?id=".$row['id']."' style='color:#FFD700'><i class='fas fa-edit'></i>Sửa</a></div></td> -->
               </tbody>";
           $cnt++;  }
             ?>

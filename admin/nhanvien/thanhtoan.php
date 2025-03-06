@@ -2,29 +2,41 @@
 session_start();
 require_once ('../../csdl/helper.php');
 if(!isset($_SESSION['user_id'])){
-header('location:../index.php');	
+    header('location:../index.php');    
 }
+
 if(isset($_POST['Hoten'])){
     $idnv = $_POST['id_nhanvien'];
-    $luong = $_POST['luong'];
+    $luong = floatval($_POST['luong']);
     $ghichu = $_POST['Ghichu'];
-		$Ngaybd = date('Y-m-j');
-    $thuong = $_POST['thuong'];
-    if($_POST['id_ca'] == 3){
-      $luong = 2 * $luong;
+    $Ngaybd = date('Y-m-j');
+    $thuong = isset($_POST['thuong']) ? floatval($_POST['thuong']) : 0;
+    $id_ca = intval($_POST['id_ca']);
+
+    // Tính toán tiền lương dựa trên ca làm việc
+    switch ($id_ca) {
+        case 1: // Ca sáng
+        case 2: // Ca chiều
+            $luong = $luong * 0.75;
+            break;
+        case 3: // Ca tối
+            $luong = $luong * 0.5;
+            break;
+        case 4: // Cả ngày
+            $luong = $luong;
+            break;
+        default:
+            $luong = 0;
+            break;
     }
-    else{
-      $luong = $luong;
-    }
+
     $tongtien = $luong + $thuong;
-    // echo $tongtien;
-    // echo $idnv;
-    // echo $_POST['id'];
-    $qry = "INSERT INTO luong(id_nhanvien, Tienthuong,Tongtien, Ngaytraluong, Ghichu) values ('$idnv', '$thuong','$tongtien','$Ngaybd','$ghichu')";
+
+    $qry = "INSERT INTO luong(id_nhanvien, Tienthuong, Tongtien, Ngaytraluong, Ghichu) values ('$idnv', '$thuong','$tongtien','$Ngaybd','$ghichu')";
     $result = mysqli_query($con,$qry); 
-		header('Location:index.php');
-		die();
-  }
+    header('Location:index.php');
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +62,30 @@ if(isset($_POST['Hoten'])){
 
 <?php include '../includes/topheader.php'?>
 <?php $page='suadichvu'; include '../includes/sidebar.php'?>
-    <?php
-        $id=$_GET['id'];
-        $qry= "select * from nhanvien n left join luong l on n.id_nhanvien = l.id_nhanvien left join congviec c on n.congviec = c.idCv left join calamviec cv on n.id_ca = cv.id_ca where n.id_nhanvien='$id'";
-        $result=mysqli_query($con,$qry);
-        while($row=mysqli_fetch_array($result)){
-    ?> 
+<?php
+$id=$_GET['id'];
+$qry= "select * from nhanvien n left join luong l on n.id_nhanvien = l.id_nhanvien left join congviec c on n.congviec = c.idCv left join calamviec cv on n.id_ca = cv.id_ca where n.id_nhanvien='$id'";
+$result=mysqli_query($con,$qry);
+$row=mysqli_fetch_array($result);
+
+// Tính toán tiền lương dựa trên ca làm việc
+$luong = floatval($row['Tratien']);
+switch ($row['id_ca']) {
+    case 1: // Ca sáng
+    case 2: // Ca chiều
+        $luong = $luong * 0.75;
+        break;
+    case 3: // Ca tối
+        $luong = $luong * 0.5;
+        break;
+    case 4: // Cả ngày
+        $luong = $luong;
+        break;
+    default:
+        $luong = 0;
+        break;
+}
+?> 
 
 <div id="content">
 <div id="content-header">
@@ -64,9 +94,7 @@ if(isset($_POST['Hoten'])){
 </div>
 <div class="container-fluid">
   <hr>
-  <div class="row-fluid" style="display: flex;
-  justify-content: center;
-  align-items: center;">
+  <div class="row-fluid" style="display: flex; justify-content: center; align-items: center;">
     <div class="span6">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="fas fa-align-justify"></i> </span>
@@ -77,40 +105,40 @@ if(isset($_POST['Hoten'])){
             <div class="control-group">
               <label class="control-label">id nhân viên :</label>
               <div class="controls">
-                <input type="text" class="span11" name="id_nhanvien" value='<?php echo $id; ?>' required />
+                <input type="text" class="span11" name="id_nhanvien" value='<?php echo $id; ?>' readonly />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Họ và tên :</label>
               <div class="controls">
-                <input type="text" class="span11" name="Hoten" value='<?php echo $row['Hoten']; ?>' required />
+                <input type="text" class="span11" name="Hoten" value='<?php echo $row['Hoten']; ?>' readonly />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Số điện thoại :</label>
               <div class="controls">
-                <input type="text" class="span11" name="Sodienthoai" value='<?php echo $row['Sodienthoai']; ?>' required />
+                <input type="text" class="span11" name="Sodienthoai" value='<?php echo $row['Sodienthoai']; ?>' readonly />
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label">Tiền lương :</label>
               <div class="controls">
-                <input type="text" class="span11" name="luong" value='<?php echo $row['Tratien']; ?>' required />
+                <input type="text" class="span11" name="luong" value='<?php echo $luong; ?>' readonly />
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label">Ca làm việc :</label>
               <div class="controls">
-                <input type="text" class="span11" name="id_ca" value='<?php echo $row['Thoigian']; ?>' required />
+                <input type="text" class="span11" name="id_ca" value='<?php echo $row['id_ca']; ?>' readonly />
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label">Tiền thưởng :</label>
               <div class="controls">
-                <input type="text" class="span11" name="thuong" value='<?php echo $row['Tienthuong']; ?>' />
+                <input type="text" class="span11" name="thuong" value='<?php echo isset($row['Tienthuong']) ? $row['Tienthuong'] : 0; ?>' />
               </div>
             </div>
 
@@ -123,19 +151,13 @@ if(isset($_POST['Hoten'])){
             <div class="form-actions text-center">
               <button type="submit" class="btn btn-success">Thanh toán</button>
             </div>
-            </form>
-
-          </div>
-
-          <?php
-        }
-    ?>
+          </form>
         </div>
-
-        </div>
+      </div>
     </div>
   </div>
-</div></div>
+</div>
+</div>
 
 <script src="../../style/js/excanvas.min.js"></script> 
 <script src="../../style/js/jquery.min.js"></script> 

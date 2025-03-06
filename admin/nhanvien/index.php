@@ -61,6 +61,7 @@ include '../includes/topheader.php';?>
                   <th>Số điện thoại</th>
                   <th>#</th>
                   <th>#</th>
+                  <th>#</th>
                 </tr>
               </thead>";
               
@@ -79,6 +80,8 @@ include '../includes/topheader.php';?>
                 <td><div class='text-center'>".$row['Sodienthoai']."</div></td>
                 <td><div class='text-center'><a href='' onclick='khach_hang_list(".$row['id_nhanvien'].")' style='color:#F66;'><i class='fas fa-trash'></i>Xoá</a></div></td>
                 <td><div class='text-center'><a href='thanhtoan.php?id=" .$row['id_nhanvien']."'><button class='btn btn-success btn'><i class='fas fa-dollar-sign'></i>Trả lương</button></a></div></td>
+                <td><div class='text-center'><a href='sua.php?id=" .$row['id_nhanvien']."'><button class='btn btn-warning btn'><i class='fas fa-edit'></i>Sửa</button></a></div></td>
+
                 </tr>
                 
               </tbody>";

@@ -32,7 +32,7 @@ if(($_SESSION['congviec']) != "Quản lý"){
 
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="index.php" title="Go to Home" class="tip-bottom"><i class="fas fa-home"></i>Trang chủ</a><a href="thongbao/index.php">Thông báo</a> <a href="#" class="current">Quản lý</a> </div>
+    <div id="breadcrumb"> <a href=# title="Go to Home" class="tip-bottom"><i class="fas fa-home"></i>Trang chủ</a><a href=#>Thông báo</a> <a href="#" class="current">Quản lý</a> </div>
     <h1 class="text-center">Quản lý thông báo<i class="fas fa-bullhorn"></i></h1>
   </div>
   <div class="container-fluid">
@@ -59,8 +59,8 @@ if(($_SESSION['congviec']) != "Quản lý"){
                   <th>#</th>
                   <th>Ngày đăng bài</th>
                   <th>Nội dung</th>
-                  <th>#</th>
-                  <th>#</th>
+                <!--  <th>#</th> -->
+                <!--  <th>#</th> -->
                 </tr>
               </thead>";
               
@@ -71,8 +71,9 @@ if(($_SESSION['congviec']) != "Quản lý"){
                 <td><div class='text-center'>".$cnt."</div></td>
                 <td><div class='text-center'>".$row['Ngaydangbai']."</div></td>
                 <td><div class='text-center'>".$row['Noidung']."</div></td>
-                <td><div class='text-center'><a href='xoa.php?id=".$row['id']."' style='color:#F66;' ><i class='fas fa-trash'></i> Xóa</a></div></td>
-                <td><div class='text-center'><a href='sua.php?id=".$row['id']."' style='color:#FFD700'><i class='fas fa-edit'></i>Sửa</a></div></td>
+                <!-- Comment hai dòng này -->
+                <!-- <td><div class='text-center'><a href='xoa.php?id=".$row['id']."' style='color:#F66;' ><i class='fas fa-trash'></i> Xóa</a></div></td> -->
+                <!-- <td><div class='text-center'><a href='sua.php?id=".$row['id']."' style='color:#FFD700'><i class='fas fa-edit'></i>Sửa</a></div></td> -->
               </tbody>";
               $cnt++;  }
               ?>

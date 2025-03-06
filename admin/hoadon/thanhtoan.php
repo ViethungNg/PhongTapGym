@@ -63,19 +63,19 @@ while($row=mysqli_fetch_array($result)){
                 <table class="">
                   <tbody>
                   <tr>
-                      <td><img src="../../style/img/demo/anime.jpg" alt="Gym Logo" width="175"></td>
+                      <td><img src="../../style/img/demo/logo.png" alt="Gym Logo" width="175"></td>
                     </tr>
                     <tr>
-                      <td><h4>Gym Hoàng Sang</h4></td>
+                      <td><h4>GYM HOME - by VietHung</h4></td>
                     </tr>
                     <tr>
-                      <td>Vinh - Nghệ An</td>
+                      <td>Tam Dương - Vĩnh Phúc</td>
                     </tr>                   
                     <tr>
-                      <td>Sđt : 0818940765</td>
+                      <td>Sđt : 0981748805</td>
                     </tr>
                     <tr>
-                      <td >Email: thaihoangsang612000@gmail.com</td>
+                      <td >Email: nvhungcv@gmail.com</td>
                     </tr>
                   </tbody>
                 </table>
